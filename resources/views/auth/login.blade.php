@@ -177,7 +177,10 @@
             <input type="password" name="password" id="password" placeholder="Enter Password" required>
             <br>
             <br>
+
             {{-- <input type="checkbox" name="terms-agree" id="terms-agree" required> --}}
+            {{-- <p class="sentence-agree">I agree to the <a href="">Terms & Conditions</a></p> --}}
+              {{-- <input type="checkbox" name="terms-agree" id="terms-agree" required> --}}
             {{-- <p class="sentence-agree">I agree to the <a href="">Terms & Conditions</a></p> --}}
 
             <input type="submit" value="Sign Up" id="submit">
