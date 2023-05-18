@@ -14600,7 +14600,7 @@ dl {
     padding-right: 15px;
     width: calc(100% - 260px);
     height: 70px;
-    background: #000; }
+    background: #bd7dd1; }
     @media (max-width: 991px) {
       .navbar .navbar-menu-wrapper {
         width: 100%;
@@ -14645,7 +14645,7 @@ dl {
             padding-right: 0.5rem;
             padding-left: 0.5rem; } }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
-          color: #8e94a9;
+          color: #000;
           font-size: 0.875rem; }
           .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
             font-size: 17px;

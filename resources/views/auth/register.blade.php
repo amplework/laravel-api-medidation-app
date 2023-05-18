@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="practice1css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,7 +149,8 @@
         padding: 20px 0;
     }
 
-    select,option {
+    select,
+    option {
         background-color: #fff;
         width: 100%;
         height: 45px;
@@ -155,13 +159,22 @@
         border-radius: 30px;
         color: #333399;
     }
-   
+
+    .cv {
+        background-color: #fff;
+        width: 100%;
+        height: 45px;
+        padding-left: 20px;
+
+        color: #333399;
+    }
 </style>
 
 <body>
     <div class="container">
+
         <form action="{{ route('register') }}" method="POST" class="sign-form" id="sign-form" autocomplete="on">
-          @csrf
+            @csrf
             <h1 class="form-title">Sign Up</h1>
             <p class="form-caption">See your growth and get Motivations support!</p>
 
@@ -175,19 +188,31 @@
 
             <label for="name">Name<span class="star-required">*</span></label>
             <input type="text" name="name" id="name" placeholder="Enter Your Name" autofocus required>
-
+            @error('name')
+                <p class="text-danger cv">{{ $message }}</p>
+            @enderror
             <label for="email">Email<span class="star-required">*</span></label>
             <input type="email" name="email" id="email" placeholder="mail@moti  .com" required>
+            @error('email')
+                <p class="text-danger cv">{{ $message }}</p>
+            @enderror
             <label for="role">Role<span class="star-required">*</span></label>
             <select class="" name="role" id="role">
                 <option selected disabled value="">Select Your Categories</option>
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select>
+            @error('role')
+                <p class="text-danger cv">{{ $message }}</p>
+            @enderror
             <label for="password">Password<span class="star-required">*</span></label>
             <input type="password" name="password" id="password" placeholder="Enter Password" required>
-            <label for="password_confirmation">password_confirmation<span class="star-required">*</span></label>
-            <input type="password_confirmation" name="password_confirmation" id="password_confirmation" placeholder="Confirmation Password" required>
+            <label for="password_confirmation">Password Confirmation<span class="star-required">*</span></label>
+            <input type="password" name="password_confirmation" id="password_confirmation"
+                placeholder="Confirmation Password" required>
+            @error('password')
+                <p class="text-danger cv">{{ $message }}</p>
+            @enderror
             <br>
             <br>
 

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="practice1css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,6 +159,14 @@
         border-radius: 30px;
         color: #333399;
     }
+    .cv {
+        background-color: #fff;
+        width: 100%;
+        height: 45px;
+        padding-left: 20px;
+
+        color: #333399;
+    }
 </style>
 
 <body>
@@ -173,14 +183,20 @@
             </div>
             <label for="email">Email<span class="star-required">*</span></label>
             <input type="email" name="email" id="email" placeholder="mail@moti  .com" required>
+            @error('email')
+                <p class="text-danger cv">{{ $message }}</p>
+            @enderror
             <label for="password">Password<span class="star-required">*</span></label>
             <input type="password" name="password" id="password" placeholder="Enter Password" required>
+            @error('password')
+                <p class="text-danger cv">{{ $message }}</p>
+            @enderror
             <br>
             <br>
 
             {{-- <input type="checkbox" name="terms-agree" id="terms-agree" required> --}}
             {{-- <p class="sentence-agree">I agree to the <a href="">Terms & Conditions</a></p> --}}
-              {{-- <input type="checkbox" name="terms-agree" id="terms-agree" required> --}}
+            {{-- <input type="checkbox" name="terms-agree" id="terms-agree" required> --}}
             {{-- <p class="sentence-agree">I agree to the <a href="">Terms & Conditions</a></p> --}}
 
             <input type="submit" value="Sign Up" id="submit">
