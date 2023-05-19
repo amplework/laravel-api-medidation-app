@@ -39,7 +39,7 @@
                         <a class="nav-link" href="{{ route('admin.categories.create') }}">Add Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">List categories</a>
+                        <a class="nav-link" href="{{ route('admin.all.categories.show') }}">List categories</a>
                     </li>
                     {{-- <li class="nav-item">
               <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>

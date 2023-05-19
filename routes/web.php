@@ -30,6 +30,8 @@ Route::prefix('/admin')->name('admin.')->middleware('auth')->group(function () {
     // categories route
     Route::get('/categories/create',[CategoriesController::class,'create'])->name('categories.create');
     Route::post('/categories/save',[CategoriesController::class,'store'])->name('categories.store');
+    Route::get('/all-categories',[CategoriesController::class,'show'])->name('all.categories.show');
+    Route::get('/categories/edit/{id}',[CategoriesController::class,'edit'])->name('categories.edit');
 });
 
 require __DIR__.'/auth.php';
