@@ -82,7 +82,7 @@ return [
             'transport' => 'failover',
             'mailers' => [
                 'smtp',
-                'log',
+                // 'log',
             ],
         ],
     ],
@@ -99,8 +99,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'moti_app@amplework.com'),
+        'name' => env('MAIL_FROM_NAME', 'Team motivational App'),
     ],
 
     /*

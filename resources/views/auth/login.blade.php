@@ -41,7 +41,7 @@
         font-size: 14px;
     }
 
-    #submit {
+    .submit {
         display: block;
         width: 100%;
         height: 30px;
@@ -133,7 +133,7 @@
 
     .have-account-line {
         margin: 30px 0 30px 0;
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .info {
@@ -159,6 +159,7 @@
         border-radius: 30px;
         color: #333399;
     }
+
     .cv {
         background-color: #fff;
         width: 100%;
@@ -170,15 +171,15 @@
 </style>
 
 <body>
-    <div class="container">
-        <form action="{{ route('login') }}" method="POST" class="sign-form" id="sign-form" autocomplete="on">
+    <div class="container sign-form">
+        <form action="{{ route('login') }}" method="POST" class="" id="sign-form" autocomplete="on">
             @csrf
             <h1 class="form-title">Login</h1>
             <p class="form-caption"> Welcome to World Motivation </p>
             <br>
             <div class="google-guide-container">
                 <div class="hr-left"></div>
-                <p class="guide-google">Login Reg. Email</p>
+                <p class="guide-google">Login Reg. Email & Google</p>
                 <div class="hr-right"></div>
             </div>
             <label for="email">Email<span class="star-required">*</span></label>
@@ -191,6 +192,7 @@
             @error('password')
                 <p class="text-danger cv">{{ $message }}</p>
             @enderror
+          
             <br>
             <br>
 
@@ -199,11 +201,18 @@
             {{-- <input type="checkbox" name="terms-agree" id="terms-agree" required> --}}
             {{-- <p class="sentence-agree">I agree to the <a href="">Terms & Conditions</a></p> --}}
 
-            <input type="submit" value="Sign Up" id="submit">
+            <input type="submit" value="Sign Up" class="submit">
+          <a href="{{ route('password.request') }}">forgot password</a>
 
-            <p class="have-account-line">Don't have an account? <a href="{{ route('register') }}">Sign Up</a></p>
+              
 
+
+            <h4 class="have-account-line">Login With Google<a href="{{ route('google.login') }}"> Login</a>
+
+                <span>Don't have an account? <a href="{{ route('register') }}">Sign Up</a></span>
+            </h4>
         </form>
+
 
         <p class="info">&copy;Copyright © Moti 2023</p>
 

@@ -20,6 +20,16 @@
             @includeIf('layouts.admin.partials.header')
             <div class="main-panel">
                 <div class="content-wrapper pb-0">
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+                    @if (Session::has('fail'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('fail') }}
+                        </div>
+                    @endif
                     @yield('content')
                 </div>
                 <footer class="footer">
@@ -28,7 +38,7 @@
                         <span
                             class="text-muted d-block text-center text-sm-left
                       d-sm-inline-block">Copyright
-                            © Moti 2023 </span>                      
+                            © Moti 2023 </span>
                     </div>
                 </footer>
             </div>

@@ -16,12 +16,17 @@
             </ol>
         </nav>
     </div>
+    <div class="page-header">
+       <a href=""></a>
+            <a href="{{ route('admin.all.categories.show') }}" class="btn btn-sm ml-3 btn-success">Categories List </a>
+
+    </div>
+   
     <div class="row">
         <div class="col-md grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Categories form</h4>
-                    <p class="card-description">Create</p>
+                    <h4 class="card-title">Categories Create form</h4>
                     <form class="forms-sample" action="{{ route('admin.categories.store') }}" method="POST">
                         @csrf
                         @isset($categories)

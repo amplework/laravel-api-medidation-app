@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('auth/google',[GoogleController::class,'loginWithGoogle'])->name('google.login');
+    Route::get('auth/google/call-back',[GoogleController::class,'handleGoogleCallback'])->name('callback');
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -32,6 +35,7 @@ Route::prefix('/admin')->name('admin.')->middleware('auth')->group(function () {
     Route::post('/categories/save',[CategoriesController::class,'store'])->name('categories.store');
     Route::get('/all-categories',[CategoriesController::class,'show'])->name('all.categories.show');
     Route::get('/categories/edit/{id}',[CategoriesController::class,'edit'])->name('categories.edit');
+    Route::get('categories/Ddelete/{i}',[CategoriesController::class,'destroy'])->name('categories.destroy');
 });
 
 require __DIR__.'/auth.php';
