@@ -8,7 +8,7 @@
 @endpush
 @section('content')
     <div class="page-header flex-wrap">
-        <h3 class="mb-0"> Hi, welcome back! <span class="pl-0 h6 pl-sm-2
+        <h3 class="mb-0"> Hi, Admin <span class="pl-0 h6 pl-sm-2
         text-muted d-inline-block">Your web
                 analytics dashboard
                 template.</span>

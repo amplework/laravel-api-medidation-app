@@ -19,12 +19,18 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+      
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if($guard == 'admin' && Auth::guard($guard)->check()){
+                dd(Auth::user());                
+                return redirect(RouteServiceProvider::SUPER_ADMIN_HOME);
+            }
+            if (Auth::guard($guard)->check() && Auth::user()->status == 1) {
                 return redirect(RouteServiceProvider::HOME);
+            }else{
+                return redirect(RouteServiceProvider::PROFILE_UPDATE);
             }
         }
-
         return $next($request);
     }
 }

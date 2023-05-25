@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="text-center sidebar-brand-wrapper d-flex
       align-items-center">
-        <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}">
+        <a class="sidebar-brand brand-logo" href="{{ route('admin.dashboard') }}">
             <h1>Moti</h1>
             <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="assets/images/logo-mini.svg"
                     alt="logo" /></a>
@@ -15,14 +15,14 @@
                     <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column pr-3">
-                    <span class="font-weight-medium mb-2">{{ Auth::guard('web')->user()->name }}</span>
+                    <span class="font-weight-medium mb-2">{{ Auth::guard('admin')->user()->name }}</span>
                     {{-- <span class="font-weight-normal">$8,753.00</span> --}}
                 </div>
                 <span class="badge badge-danger text-white ml-3 rounded">3</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('dashboard') }}">
+            <a class="nav-link" href="{{ route('admin.dashboard') }}">
                 <i class="mdi mdi-home menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -40,6 +40,27 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.all.categories.show') }}">List categories</a>
+                    </li>
+                    {{-- <li class="nav-item">
+              <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+            </li> --}}
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-noti" aria-expanded="false" aria-controls="ui-basic">
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                {{-- <i class="mdi fd mdi-bell-ring-outline"> </i>  --}}
+                <span class="menu-title">Notification</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-noti">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.notification.create') }}">Add Notification</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.notification.show') }}">Notification</a>
                     </li>
                     {{-- <li class="nav-item">
               <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
@@ -86,7 +107,7 @@
             <div class="nav-link">
                 <div class="mt-4">                  
                     <ul class="mt-4 pl-0">
-                      <a href="{{ route('logout') }}">
+                      <a href="{{ route('admin.logout') }}">
                         <li>Sign Out</li>
                       </a>
                     </ul>

@@ -16,13 +16,13 @@
             href="#" data-toggle="dropdown">
             <img class="nav-profile-img mr-2" alt=""
               src="{{ asset('assets/images/faces/face1.jpg')}}" />
-            <span class="profile-name">{{ Auth::guard('web')->user()->name }}</span>
+            <span class="profile-name">{{ Auth::guard('admin')->user()->name }}</span>
           </a>
           <div class="dropdown-menu navbar-dropdown w-100"
             aria-labelledby="profileDropdown">
             <a class="dropdown-item" href="#">
               <i class="mdi mdi-cached mr-2 text-success"></i> Profile </a>
-            <a class="dropdown-item" href="{{ route('logout') }}">
+            <a class="dropdown-item" href="{{ route('admin.logout') }}">
               <i class="mdi mdi-logout mr-2 text-primary"></i> Signout
             </a>
           </div>

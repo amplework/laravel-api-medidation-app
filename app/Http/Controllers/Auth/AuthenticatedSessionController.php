@@ -28,8 +28,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        if (Auth::user()->status == 0 && AUth::user()->role=='user') {
+            return redirect()->route('profile.create');
+        }else{
+            return redirect()->intended(RouteServiceProvider::HOME);
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        }
+
     }
 
     /**
