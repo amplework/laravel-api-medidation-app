@@ -30,6 +30,7 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     // profile Update Route
     Route::get('/profiles', [DashboardController::class, 'profile_info'])->name('profile.create');
+    Route::post('profiles-store',[DashboardController::class,'store'])->name('profile.store');
     // dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'user_dashboard'])->name('dashboard');
     // Auth Route 

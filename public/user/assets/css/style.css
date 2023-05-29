@@ -126,7 +126,7 @@ Main Content Wrapper Area CSS
   min-height: 100vh;
   padding-top: 100px;
   padding-left: 175px;
-  padding-right: 215px;
+  /* padding-right: 215px; */
   padding-bottom: 50px;
 }
 

@@ -15,8 +15,7 @@
                         <div class="profile-box d-flex justify-content-between align-items-center">
                             <a href="my-profile.html"><img src="{{ asset('user/assets/images/user/user-1.jpg')}}" alt="image"></a>
                             <div class="text ms-2">
-                                <h3><a href="my-profile.html">Matthew
-                                        Turner</a></h3>
+                                <h3><a href="my-profile.html">{{Auth::user()->name}}</a></h3>
                                 <span>Washington</span>
                             </div>
                         </div>
@@ -70,7 +69,7 @@
                         </div>
                     </div>
                     <div class="widget widget-page-you-like">
-                        <h3 class="widget-title">Page You Like</h3>
+                        <h3 class="widget-title">Top Trainers</h3>
 
                         <article class="item">
                             <a href="#" class="thumb">
@@ -84,127 +83,29 @@
                                 <span>1215 Members</span>
                             </div>
                         </article>
-                        <article class="item">
-                            <a href="#" class="thumb">
-                                <span class="fullimage bg2" role="img"></span>
-                            </a>
-
-                            <div class="info">
-                                <h4 class="title">
-                                    <a href="#">Digital Marketing</a>
-                                </h4>
-                                <span>1865 Members</span>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="#" class="thumb">
-                                <span class="fullimage bg3" role="img"></span>
-                            </a>
-
-                            <div class="info">
-                                <h4 class="title">
-                                    <a href="#">Fitness Club</a>
-                                </h4>
-                                <span>2051 Members</span>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="#" class="thumb">
-                                <span class="fullimage bg4" role="img"></span>
-                            </a>
-
-                            <div class="info">
-                                <h4 class="title">
-                                    <a href="#">Dream Restaurant</a>
-                                </h4>
-                                <span>5214 Members</span>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="#" class="thumb">
-                                <span class="fullimage bg5" role="img"></span>
-                            </a>
-
-                            <div class="info">
-                                <h4 class="title">
-                                    <a href="#">Travel Life</a>
-                                </h4>
-                                <span>9589 Members</span>
-                            </div>
-                        </article>
+                     
                     </div>
                     <div class="widget widget-watch-video">
-                        <h3 class="widget-title">Watch Video</h3>
-
+                        <h3 class="widget-title">Categories</h3>
                         <div class="watch-video-slides owl-carousel owl-theme">
                             <div class="video-item">
                                 <img src="{{ asset('user/assets/images/watch-video/video-1.jpg')}}" alt="image">
-
-                                <a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
-                                    <i class="ri-play-fill"></i>
-                                </a>
-                            </div>
-                            <div class="video-item">
-                                <img src="{{ asset('user/assets/images/watch-video/video-2.jpg')}}" alt="image">
-
-                                <a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
-                                    <i class="ri-play-fill"></i>
-                                </a>
-                            </div>
-                            <div class="video-item">
-                                <img src="{{ asset('user/assets/images/watch-video/video-3.jpg')}}" alt="image">
-
                                 <a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
                                     <i class="ri-play-fill"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="widget widget-advertisement">
-                        <h3 class="widget-title">Advertisement</h3>
-
-                        <div class="advertisement-image">
-                            <a href="#"><img src="{{ asset('user/assets/images/advertisement.jpg')}}" alt="image"></a>
-                        </div>
-                    </div>
+                   
                     <div class="widget widget-suggested-groups">
-                        <h3 class="widget-title">Suggested Groups</h3>
+                        <h3 class="widget-title">Suggested for you</h3>
                         <article class="item">
                             <a href="#" class="thumb">
                                 <span class="fullimage bg1" role="img"></span>
                             </a>
-
                             <div class="info">
                                 <h4 class="title">
-                                    <a href="#">UX/UI Design Group</a>
-                                </h4>
-                                <span>5000+ Members</span>
-                                <a href="#" class="join-btn">Join
-                                    Community</a>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="#" class="thumb">
-                                <span class="fullimage bg2" role="img"></span>
-                            </a>
-
-                            <div class="info">
-                                <h4 class="title">
-                                    <a href="#">Job Search Group</a>
-                                </h4>
-                                <span>5000+ Members</span>
-                                <a href="#" class="join-btn">Join
-                                    Community</a>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="#" class="thumb">
-                                <span class="fullimage bg3" role="img"></span>
-                            </a>
-
-                            <div class="info">
-                                <h4 class="title">
-                                    <a href="#">Photography Group</a>
+                                    <a href="#">Meditation</a>
                                 </h4>
                                 <span>5000+ Members</span>
                                 <a href="#" class="join-btn">Join
@@ -949,11 +850,7 @@
 
             <div class="col-lg-3 col-md-12">
                 <aside class="widget-area">
-                    <div class="widget widget-weather">
-                        <div class="weather-image">
-                            <a href="#"><img src="{{ asset('user/assets/images/weather/weather.jpg')}}" alt="image"></a>
-                        </div>
-                    </div>
+                    
                     <div class="widget widget-birthday">
                         <div class="birthday-title d-flex justify-content-between align-items-center">
                             <h3>Today Birthdays</h3>

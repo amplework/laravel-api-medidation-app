@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin\Categories\Categories;
+use App\Models\User;
+use App\Models\User\UserCategories;
+use App\Models\User\UserNotification;
+use App\Models\UserInformation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -49,12 +54,53 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->toArray());
+        // user profiles store function
+
+
+        $data = new UserInformation();
+        $data->user_id = Auth::user()->id;
+        $data->role = Auth::user()->role;
+        $data->name = Auth::user()->name;
+        $data->last_name = $request->last_name;
+        $data->dob = $request->dob;
+        $data->gender = $request->gender;
+        $data->about_moti = $request->about_moti;
+
+        // categories save with user function
+        if (count($request->categories) > 0) {
+            foreach ($request->categories as $cat) {
+                // dd($cat);
+                $categories = new UserCategories();
+                $categories->user_id = Auth::user()->id;
+                $categories->categories_id = $cat;
+                $categories->status = 1;
+                $categories->save();
+            }
+        }
+        $data->exp_info_status = $request->experience;
+        $data->profile_status = $request->profile_status;
+        $data->status = 1;
+        $data->save();
+        // user Notification save function
+        $notification = new UserNotification();
+        $notification->user_id = Auth::user()->id;
+        $notification->push_notification = $request->push_notification ? '1' : '0';
+        $notification->tips_notification = $request->tips ? '1' : '0';
+        $notification->reminders_notification = $request->reminders ? '1' : '0';
+        $notification->when_schedule = $request->notification_schedule;
+        $notification->sending_time = $request->time;
+        $notification->status = 1;
+        $notification->save();
+        // user Model Status Update In Profiles Active
+        $user = User::find(Auth::user()->id);
+        $user->status = 1;
+        $user->save();
+        return redirect()->route('dashboard');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
         //

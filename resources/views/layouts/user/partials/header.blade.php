@@ -21,7 +21,8 @@
             <div class="main-navbar">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a href="index.html" class="navbar-brand d-flex align-items-center">
-                        <img src="{{ asset('user/assets/images/logo.png')}}" alt="image">
+                        <h1>Moti</h1>
+                        {{-- <img src="{{ asset('user/assets/images/logo.png')}}" alt="image"> --}}
                     </a>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -40,14 +41,13 @@
                                         aria-haspopup="true" aria-expanded="false">
                                         <div class="menu-profile">
                                             <img src="{{ asset('user/assets/images/user/user-1.jpg')}}" class="rounded-circle" alt="image">
-                                            <span class="name">Matthew</span>
+                                            <span class="name">{{ Auth::user()->name }}</span>
                                             <span class="status-online"></span>
                                         </div>
                                     </a>
-
                                     <div class="dropdown-menu">
                                         <div class="profile-header">
-                                            <h3>Matthew Turner</h3>
+                                            <h3>{{ Auth::user()->name }}</h3>
                                             <a
                                                 href=""><span
                                                     class="__cf_email__"
@@ -62,7 +62,6 @@
                                                 @csrf
                                                 <button>Logout</button>
                                                 </form>
-                                                {{-- <a href="{{ route('logout') }}">Logout</a></li> --}}
                                         </ul>
                                     </div>
                                 </div>

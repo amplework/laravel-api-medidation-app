@@ -27,7 +27,8 @@ class RedirectIfAuthenticated
             }
             if (Auth::guard($guard)->check() && Auth::user()->status == 1) {
                 return redirect(RouteServiceProvider::HOME);
-            }else{
+            }elseif(Auth::guard($guard)->check()){
+               
                 return redirect(RouteServiceProvider::PROFILE_UPDATE);
             }
         }
